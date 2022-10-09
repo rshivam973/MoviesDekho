@@ -13,10 +13,11 @@
 
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import "./Cards.css"
 
 function Cards() {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className='card-render' style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
