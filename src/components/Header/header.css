@@ -1,0 +1,10 @@
+.site-logo{
+    height: 20%;
+    width: 20%;
+    /* margin-left: 40%; */
+    transform: translate(200%);
+
+}
+header{
+    background-color: #9CFF2E;
+}
