@@ -5,6 +5,8 @@ import "react-multi-carousel/lib/styles.css";
 import Navi from "../Navbar/Navbar";
 import "./Anime.css";
 
+const RAPID_API_KEY= process.env.REACT_APP_RAPID_API_KEY;
+
 const Anime = () => {
   const [topAnimes, setTopAnimes] = useState([]);
   const [upcomingAnimes, setUpcomingAnimes]= useState([]);
@@ -44,7 +46,7 @@ const Anime = () => {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "98fbba120bmsh4f87045af9b654ap19c623jsn21a28e9fc1d9",
+            RAPID_API_KEY,
           "X-RapidAPI-Host": "myanimelist.p.rapidapi.com",
         },
       };
@@ -64,7 +66,7 @@ const Anime = () => {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "98fbba120bmsh4f87045af9b654ap19c623jsn21a28e9fc1d9",
+            RAPID_API_KEY,
           "X-RapidAPI-Host": "myanimelist.p.rapidapi.com",
         },
       };
