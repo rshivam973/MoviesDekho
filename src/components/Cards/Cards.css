@@ -1,0 +1,43 @@
+.card-container{
+    display: inline-block;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: 15px 6px;
+    position: relative;
+    
+}
+.main-card{
+    border-left: 5px;
+    border-right: 1px;
+    border: 2px solid #040404;
+    border-radius: 35px;
+    position: relative;
+    display: flex;
+    flex-basis: auto;
+    font-size: small;
+    
+}
+.card-title{
+    font-size: medium;
+    font-weight: bold;
+}
+
+#style-8::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: #F5F5F5;
+}
+.force-overflow
+{
+	min-height: 450px;
+}
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-x: scroll;
+	margin-bottom: 25px;
+}

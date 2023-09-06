@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/MoviesD/static/css/main.6282164e.css",
+    "main.js": "/MoviesD/static/js/main.bdc67339.js",
+    "static/media/Moviesdekho.png": "/MoviesD/static/media/Moviesdekho.90fbe5859eaba8261a2e.png",
+    "index.html": "/MoviesD/index.html",
+    "main.6282164e.css.map": "/MoviesD/static/css/main.6282164e.css.map",
+    "main.bdc67339.js.map": "/MoviesD/static/js/main.bdc67339.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6282164e.css",
+    "static/js/main.bdc67339.js"
+  ]
+}

@@ -1,0 +1,13 @@
+.movie-card{
+    border: 1px solid #e6e5e5;
+    border-radius: 20px;
+    margin-right: 3px;
+}
+
+.hr-class{
+    display: flex;
+  justify-content: center; /* Horizontal centering */
+  /* align-items: center; */
+  height: 10px; 
+  color: #000;
+}

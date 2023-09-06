@@ -1,0 +1,5 @@
+API_LINK : https://api.themoviedb.org/3/movie/76341?api_key=15e383204c1b8a09dbfaaa4c01ed7e17
+
+key: 15e383204c1b8a09dbfaaa4c01ed7e17
+IMG_INITIAL_URL : https://image.tmdb.org/t/p/w500/
+

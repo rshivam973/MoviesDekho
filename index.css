@@ -1,0 +1,32 @@
+.icon{
+    background-color: rgb(133, 182, 224);
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+
+.new-img{
+    height: 30%;
+    width: 20%;
+    align-items: flex-start;
+}
+
+.abc-start{
+    text-align: center;
+    text-decoration: line-through;
+}
+.png-icons{
+    opacity: inherit;
+}
+.new-cards{
+    font-style: oblique;
+}
+.body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,10 @@
+/* .navbar-bg{
+    position: static;
+} */
+
+.nav-link.active {
+    background-color: royalblue;
+    border-radius: 10px;
+    color: white; /* Change text color if needed */
+  }
+  
