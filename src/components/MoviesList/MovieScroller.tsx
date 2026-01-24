@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import MovieCard from './MovieCard';
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import tmdbApi from '../../api/tmdb';
@@ -94,14 +94,14 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
     }, [isHovered, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage, isInfinite]);
 
     // Handle horizontal scroll to trigger next page (manual scroll)
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         if (!scrollContainerRef.current || !isInfinite || !hasNextPage || isFetchingNextPage) return;
 
         const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
         if (scrollLeft + clientWidth >= scrollWidth - 100) {
             fetchNextPage();
         }
-    };
+    }, [isInfinite, hasNextPage, isFetchingNextPage, fetchNextPage]);
 
     useEffect(() => {
         const container = scrollContainerRef.current;
@@ -109,7 +109,7 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
             container.addEventListener('scroll', handleScroll);
             return () => container.removeEventListener('scroll', handleScroll);
         }
-    }, [hasNextPage, isFetchingNextPage, isInfinite]);
+    }, [handleScroll]);
 
     return (
         <div className="py-8 max-w-[1400px] mx-auto px-4">
