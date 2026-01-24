@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import MovieCard from './MovieCard';
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
-import tmdbApi from '@/api/tmdb';
+import tmdbApi from '@/services/tmdb';
 import { Skeleton } from '../ui/skeleton';
 import { Button } from '../ui/button';
 import Link from 'next/link';

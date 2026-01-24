@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import tmdbApi from '../api/tmdb';
+import tmdbApi from '../services/tmdb';
 
 export const useTrending = (type: 'movie' | 'tv' | 'all', timeWindow: 'day' | 'week' = 'day') => {
     return useQuery({

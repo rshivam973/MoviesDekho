@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { getImageInitialUrl } from '@/utils/helpers';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import tmdbApi from '@/api/tmdb';
+import tmdbApi from '@/services/tmdb';
 import { Skeleton } from '../ui/skeleton';
 
 const People: React.FC = () => {

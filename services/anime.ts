@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
 const animeApi: AxiosInstance = axios.create({
-    baseURL: '/api/anime/rapid/',
+    baseURL: '/api/anime/rapid',
 });
 
 // Request interceptor

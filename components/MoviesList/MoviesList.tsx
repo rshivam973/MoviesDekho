@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./MoviesList.css";
 import { getImageInitialUrl } from "@/utils/helpers";
-import tmdbApi from "@/api/tmdb";
+import tmdbApi from '@/services/tmdb';
 interface Movie {
   id: number;
   original_title: string;

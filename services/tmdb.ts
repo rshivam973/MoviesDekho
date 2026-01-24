@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
 const tmdbApi: AxiosInstance = axios.create({
-    baseURL: '/api/tmdb/',
+    baseURL: '/api/tmdb',
 });
 
 // Request interceptor

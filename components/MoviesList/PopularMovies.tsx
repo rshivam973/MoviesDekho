@@ -6,7 +6,7 @@ import MovieCard from './MovieCard';
 import { Button } from '../ui/button';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import tmdbApi from '@/api/tmdb';
+import tmdbApi from '@/services/tmdb';
 import { Skeleton } from '../ui/skeleton';
 
 const PopularMovies: React.FC = () => {

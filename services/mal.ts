@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
 const malApi: AxiosInstance = axios.create({
-    baseURL: '/api/anime/mal/',
+    baseURL: '/api/anime/mal',
 });
 
 // Request interceptor

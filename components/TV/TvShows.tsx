@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
-import tmdbApi from '@/api/tmdb';
+import tmdbApi from '@/services/tmdb';
 
 import MovieCard from '../MoviesList/MovieCard';
 import { Skeleton } from '../ui/skeleton';

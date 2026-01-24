@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import malApi from '@/api/mal';
+import malApi from '@/services/mal';
 import MovieCard from '../MoviesList/MovieCard';
 import { Skeleton } from '../ui/skeleton';
 import { Button } from '../ui/button';

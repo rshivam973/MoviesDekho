@@ -1,6 +1,6 @@
 import { useQuery, useInfiniteQuery } from '@tanstack/react-query';
-import malApi from '../api/mal';
-import animeApi from '../api/anime';
+import malApi from '../services/mal';
+import animeApi from '../services/anime';
 
 // New Anime Ranking Endpoint: /anime/ranking?ranking_type={type}&limit={limit}&offset={offset}
 // Based on user screenshots.

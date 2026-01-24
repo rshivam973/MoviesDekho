@@ -5,8 +5,8 @@ import Header from '../../Header/Header';
 import Navi from '../../Navbar/Navbar';
 import Cards from '../../Cards/Cards';
 import './TopRated.css';
-import tmdbApi from "../../../api/tmdb";
-import { getImageInitialUrl } from '../../../utils/helpers';
+import tmdbApi from '@/services/tmdb';
+import { getImageInitialUrl } from '@/utils/helpers';
 
 
 const IMG_INITIAL_URL = getImageInitialUrl();
