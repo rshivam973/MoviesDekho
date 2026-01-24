@@ -3,27 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-toggle": "^1.1.10",
+    "@radix-ui/react-toggle-group": "^1.1.11",
+    "@tanstack/react-query": "^5.90.19",
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.0-alpha3",
+    "axios": "^1.13.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "dotenv": "^16.3.1",
     "emailjs-com": "^3.2.0",
-    "jquery": "^3.6.1",
     "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.7.2",
-    "react-dom": "^18.2.0",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-modules": "^1.0.8",
     "react-multi-carousel": "^2.8.4",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-bootstrap": "^0.26.2",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
-    "react-slick": "^0.29.0",
     "react-toastify": "^9.1.3",
-    "semantic-ui-react": "^2.1.3",
-    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -49,5 +54,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^4.9.5"
   }
 }

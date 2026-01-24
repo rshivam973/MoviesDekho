@@ -1,45 +1,47 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./MoviesList.css";
+import { getImageInitialUrl } from "../../utils/helpers";
+import tmdbApi from "../../api/tmdb";
+interface Movie {
+  id: number;
+  original_title: string;
+  poster_path: string;
+  release_date: string;
+  vote_average: number;
+  name?: string;
+}
 
-const IMG_INITIAL_URL = "https://image.tmdb.org/t/p/w500/";
+const IMG_INITIAL_URL = getImageInitialUrl();
+const API_KEY = process.env.REACT_APP_API_KEY;
 
-function Movies() {
-  const [trendingMovies, setTrendingMovies] = useState([]);
-  const [upcomingMovies, setUpcomingMovies] = useState([]);
+const Movies: React.FC = () => {
+  const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
+  const [upcomingMovies, setUpcomingMovies] = useState<Movie[]>([]);
 
   const TRENDING_MOVIES_API_URL =
-    "https://api.themoviedb.org/3/trending/all/day?api_key=bb320e801ed3a5b652434c6d98f71de2";
+    "https://api.themoviedb.org/3/trending/all/day?api_key=" + API_KEY;
 
   useEffect(() => {
-    const trendingMovies = () => {
-      fetch(TRENDING_MOVIES_API_URL)
-        .then((res) => res.json())
-        .then((data) => {
-          setTrendingMovies(data.results);
-        });
+    const trendingMovies = async () => {
+      try {
+        const response = await tmdbApi.get('/trending/all/day');
+        setTrendingMovies(response.data.results);
+      } catch (error) {
+        console.error('Error fetching trending movies:', error);
+      }
     };
 
-    const upcomingMovies = () => {
-      const options = {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYjMyMGU4MDFlZDNhNWI2NTI0MzRjNmQ5OGY3MWRlMiIsInN1YiI6IjYzNTJjM2QzMjU1ZGJhMDA3YTY0ZWJlYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oUvaGp1DEH9UODXdSN_l3rqKsE1u5g7cqEm7c_5FQsY",
-        },
-      };
-
-      fetch(
-        "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
-        options
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setUpcomingMovies(data.results);
+    const upcomingMovies = async () => {
+      try {
+        const response = await tmdbApi.get('/movie/upcoming', {
+          params: { language: 'en-US', page: 1 }
         });
+        setUpcomingMovies(response.data.results);
+      } catch (error) {
+        console.error('Error fetching upcoming movies:', error);
+      }
     };
 
     trendingMovies();
@@ -76,17 +78,10 @@ function Movies() {
 
   return (
     <>
-      <p
-        style={{
-          marginTop: "8px",
-          marginLeft: "35px",
-          fontWeight: "bold",
-          fontSize: "25px",
-        }}
-      >
+      <p className="mt-2 ml-9 font-bold text-2xl">
         Trending
       </p>
-      <div style={{ paddingLeft: "2%", paddingRight: "2%" }}>
+      <div className="px-2">
         <Carousel {...carouselConfig}>
           {trendingMovies.map((movie) => (
             <div key={movie.id} className="movie-card">
@@ -104,20 +99,13 @@ function Movies() {
       <div className="hr-class">
         <hr color="black" />
       </div>
-      <br/>
-      <br/>
+      <br />
+      <br />
 
-      <p
-        style={{
-          marginTop: "8px",
-          marginLeft: "35px",
-          fontWeight: "bold",
-          fontSize: "25px",
-        }}
-      >
+      <p className="mt-2 ml-9 font-bold text-2xl">
         Upcoming
       </p>
-      <div style={{ paddingLeft: "2%", paddingRight: "2%" }}>
+      <div className="px-2">
         <Carousel {...carouselConfig}>
           {upcomingMovies.map((movie) => (
             <div key={movie.id} className="movie-card">
