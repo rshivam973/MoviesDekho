@@ -9,7 +9,7 @@ export async function GET(
     const searchParams = request.nextUrl.searchParams;
     const apiPath = path.join('/');
     const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
-    const TMDB_ACCESS_TOKEN = process.env.REACT_APP_TMDB_ACCESS_TOKEN;
+    const TMDB_ACCESS_TOKEN = process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN;
 
     const fullUrl = `${TMDB_BASE_URL}/${apiPath}`;
 

@@ -10,7 +10,7 @@ export async function GET(
     const apiPath = path.join('/');
 
     const ANIME_BASE_URL = 'https://myanimelist.p.rapidapi.com';
-    const RAPID_API_KEY = process.env.REACT_APP_RAPID_API_KEY;
+    const RAPID_API_KEY = process.env.NEXT_PUBLIC_RAPID_API_KEY;
 
     try {
         const response = await axios.get(`${ANIME_BASE_URL}/${apiPath}`, {
