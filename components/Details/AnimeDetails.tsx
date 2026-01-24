@@ -336,6 +336,7 @@ const AnimeDetails: React.FC = () => {
                                             releaseDate=""
                                             voteAverage={0}
                                             mediaType="anime"
+                                            className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
                                         />
                                         <div className="absolute top-2 left-2 pointer-events-none">
                                             <span className="px-2 py-1 rounded bg-black/70 text-white text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm">
@@ -366,6 +367,7 @@ const AnimeDetails: React.FC = () => {
                                         releaseDate=""
                                         voteAverage={0}
                                         mediaType="anime"
+                                        className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
                                     />
                                 </div>
                             ))}

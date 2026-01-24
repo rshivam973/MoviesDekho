@@ -35,11 +35,12 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="bg-secondary text-secondary-foreground py-12 mt-12 border-t">
-            <div className="max-w-[1400px] mx-auto px-4 flex justify-between">
-              <div>
-                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">MoviesDekho</h3>
+            <div className="max-w-[1400px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <span className="text-2xl font-bold text-primary">MoviesDekho</span>
+                <p className="text-sm text-muted-foreground">Your ultimate destination for movies, TV shows, and anime.</p>
               </div>
-              <div>
+              <div className="text-center md:text-right">
                 <p>&copy; {new Date().getFullYear()} MoviesDekho. All rights reserved.</p>
               </div>
             </div>
