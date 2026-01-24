@@ -126,6 +126,7 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
                     <Link
                         href={viewAllPath}
                         className="flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+                        prefetch={false}
                     >
                         View All <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -175,6 +176,7 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
                                         releaseDate={movie.release_date || movie.first_air_date || ''}
                                         voteAverage={movie.vote_average}
                                         mediaType={propMediaType || (title.toLowerCase().includes('tv') ? 'tv' : 'movie')}
+                                        className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
                                     />
                                 </div>
                             ))}

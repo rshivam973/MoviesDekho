@@ -206,6 +206,7 @@ const MovieDetails: React.FC = () => {
                                         releaseDate={sim.release_date}
                                         voteAverage={sim.vote_average}
                                         mediaType="movie"
+                                        className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
                                     />
                                 </div>
                             ))}

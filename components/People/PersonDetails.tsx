@@ -130,6 +130,7 @@ const PersonDetails: React.FC = () => {
                                         releaseDate={work.release_date || work.first_air_date || ''}
                                         voteAverage={work.vote_average}
                                         mediaType={work.media_type}
+                                        className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
                                     />
                                 </div>
                             ))}

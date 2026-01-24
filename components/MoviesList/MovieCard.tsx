@@ -13,13 +13,14 @@ interface MovieCardProps {
     mediaType?: 'movie' | 'tv' | 'anime';
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({
+const MovieCard: React.FC<MovieCardProps & { className?: string }> = ({
     id,
     title,
     posterPath,
     releaseDate,
     voteAverage,
     mediaType = 'movie',
+    className,
 }) => {
     const imageUrl = posterPath
         ? (posterPath.startsWith('http') ? posterPath : `${getImageInitialUrl()}${posterPath}`)
@@ -37,9 +38,9 @@ const MovieCard: React.FC<MovieCardProps> = ({
     }
 
     return (
-        <div className="flex flex-col w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px] mb-4 relative group">
+        <div className={`flex flex-col mb-4 relative group ${className || 'w-full'}`}>
             {/* Image Container */}
-            <div className="relative rounded-lg overflow-hidden shadow-sm h-[225px] sm:h-[240px] md:h-[270px] lg:h-[300px]">
+            <div className="relative rounded-lg overflow-hidden shadow-sm aspect-[2/3]">
                 <Link href={`/${mediaType}/${id}`}>
                     <img
                         src={imageUrl}

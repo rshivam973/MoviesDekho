@@ -301,6 +301,7 @@ const TvDetails: React.FC = () => {
                                         releaseDate={sim.first_air_date}
                                         voteAverage={sim.vote_average}
                                         mediaType="tv"
+                                        className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
                                     />
                                 </div>
                             ))}

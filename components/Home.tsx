@@ -19,6 +19,7 @@ const AnimeTrendScroller: React.FC = () => {
         <Link
           href="/anime"
           className="flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+          prefetch={false}
         >
           View All <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
         </Link>
@@ -40,6 +41,7 @@ const AnimeTrendScroller: React.FC = () => {
                 releaseDate={anime.aired_on || ""}
                 voteAverage={anime.score || 0}
                 mediaType="anime"
+                className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
               />
             </div>
           ))

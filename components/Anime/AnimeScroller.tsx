@@ -18,12 +18,13 @@ const AnimeScroller: React.FC<AnimeScrollerProps> = ({ title, rankingType, viewA
     const { data: animes, isLoading, isError, error, refetch } = useAnimeRanking(rankingType, 20);
 
     return (
-        <div className="py-8 max-w-[1400px] mx-auto px-4">
+        <div className="py-4 max-w-[1400px] mx-auto px-4">
             <div className="flex justify-between items-center mb-6 px-2 border-l-4 border-primary pl-4">
                 <h2 className="text-2xl font-bold text-foreground">{title}</h2>
                 <Link
                     href={viewAllPath}
                     className="flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+                    prefetch={false}
                 >
                     View All <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -59,6 +60,7 @@ const AnimeScroller: React.FC<AnimeScrollerProps> = ({ title, rankingType, viewA
                                 releaseDate={anime.aired_on || ""}
                                 voteAverage={anime.score || 0}
                                 mediaType="anime"
+                                className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px]"
                             />
                         </div>
                     ))
