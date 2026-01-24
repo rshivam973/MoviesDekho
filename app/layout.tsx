@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "../components/Providers";
+import Navbar from "../components/Navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <Navbar />
+          <main className="min-h-screen pt-16">
+            {children}
+          </main>
+          <footer className="bg-secondary text-secondary-foreground py-12 mt-12 border-t">
+            <div className="max-w-[1400px] mx-auto px-4 flex justify-between">
+              <div>
+                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">MoviesDekho</h3>
+              </div>
+              <div>
+                <p>&copy; {new Date().getFullYear()} MoviesDekho. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+        </Providers>
       </body>
     </html>
   );
