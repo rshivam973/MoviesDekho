@@ -39,7 +39,10 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
     const [isTouchDevice, setIsTouchDevice] = useState(false);
 
     useEffect(() => {
-        setIsTouchDevice(window.matchMedia('(pointer: coarse)').matches);
+        const hasTouch = 'ontouchstart' in window || 
+                         navigator.maxTouchPoints > 0 || 
+                         (navigator as any).msMaxTouchPoints > 0;
+        setIsTouchDevice(hasTouch);
     }, []);
 
     // Dynamic Query based on isInfinite prop
@@ -147,11 +150,11 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
             >
                 <div
                     ref={scrollContainerRef}
-                    className="flex gap-4 overflow-x-auto pb-6 pt-4 px-2 snap-x scrollbar-hide scroll-smooth"
+                    className="flex gap-4 overflow-x-auto pb-6 pt-4 px-2 scrollbar-hide scroll-smooth"
                 >
                     {isLoading ? (
                         Array.from({ length: 10 }).map((_, idx) => (
-                            <div key={idx} className="flex-none snap-start">
+                            <div key={idx} className="flex-none">
                                 <Skeleton className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px] h-[225px] sm:h-[240px] md:h-[270px] lg:h-[300px] rounded-lg" />
                             </div>
                         ))
@@ -174,7 +177,7 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
                             {movies.map((movie, index) => (
                                 <div
                                     key={`${movie.id}-${index}`}
-                                    className="flex-none snap-start animate-in fade-in zoom-in-95 duration-500 fill-mode-both"
+                                    className="flex-none animate-in fade-in zoom-in-95 duration-500 fill-mode-both"
                                     style={{ animationDelay: `${(index % 20) * 50}ms` }}
                                 >
                                     <MovieCard
@@ -190,7 +193,7 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
                             ))}
                             {isFetchingNextPage && (
                                 Array.from({ length: 4 }).map((_, idx) => (
-                                    <div key={`skeleton-next-${idx}`} className="flex-none snap-start">
+                                    <div key={`skeleton-next-${idx}`} className="flex-none">
                                         <Skeleton className="w-[150px] sm:w-[160px] md:w-[180px] lg:w-[200px] h-[225px] sm:h-[240px] md:h-[270px] lg:h-[300px] rounded-lg" />
                                     </div>
                                 ))
