@@ -36,6 +36,11 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
 }) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        setIsTouchDevice(window.matchMedia('(pointer: coarse)').matches);
+    }, []);
 
     // Dynamic Query based on isInfinite prop
     const infiniteQuery = useInfiniteQuery({
@@ -81,7 +86,7 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
     // Auto-scroll logic
     useEffect(() => {
         const container = scrollContainerRef.current;
-        if (!container || isHovered || isLoading || isFetchingNextPage) return;
+        if (!container || isTouchDevice || isHovered || isLoading || isFetchingNextPage) return;
 
         const autoScroll = setInterval(() => {
             if (container) {
@@ -96,7 +101,7 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
         }, 30);
 
         return () => clearInterval(autoScroll);
-    }, [isHovered, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage, isInfinite]);
+    }, [isTouchDevice, isHovered, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage, isInfinite]);
 
     // Handle horizontal scroll to trigger next page (manual scroll)
     const handleScroll = useCallback(() => {
@@ -136,6 +141,9 @@ const MovieScroller: React.FC<MovieScrollerProps> = ({
                 className="relative"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onTouchStart={() => setIsHovered(true)}
+                onTouchEnd={() => setIsHovered(false)}
+                onTouchCancel={() => setIsHovered(false)}
             >
                 <div
                     ref={scrollContainerRef}
